@@ -6,10 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
+  <SmoothScrollProvider>
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -24,6 +27,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </SmoothScrollProvider>
 );
 
 export default App;

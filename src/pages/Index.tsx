@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin, Wifi, Coffee, Car, Shield, Users, ChevronRight, ChevronLeft } from "lucide-react"
 import { useState, useEffect } from "react";
 
+
 const images = [
   "/img/hotel3.png",
   "/img/view.jpg",
@@ -22,13 +23,15 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Booking Card */}
       <section
-        className="relative flex flex-col items-center justify-end min-h-[200px] sm:min-h-[290px] md:min-h-[390px] lg:min-h-[430px]
+        className="relative flex flex-col items-center justify-end min-h-[100px] sm:min-h-[290px] md:min-h-[390px] lg:min-h-[430px]
              bg-none sm:bg-cover sm:bg-center sm:bg-no-repeat
              mt-8 sm:mt-16 mx-2 sm:mx-8 lg:mx-20 rounded-xl overflow-visible transition-all duration-1000"
         style={window.innerWidth >= 750 ? { backgroundImage: `url(${images[currentImage]})` } : {}}
@@ -81,26 +84,76 @@ const Index = () => {
       </section>
 
       {/* Features Banner */}
-      <section className="py-16 bg-background mt-40">
+      <section className="py-16 bg-background lg:mt-40 will-change-transform sm:mt-60">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border-2 hover:border-primary transition-colors">
+            {/* Shield Feature - Indigo */}
+            <Card className={`
+        group text-center border-2
+        border-[rgba(0,0,0,0.1)]
+        hover:border-indigo-500
+        transition-colors transform
+        hover:scale-105
+        transition-transform duration-500 ease-out
+        shadow
+        hover:shadow-[0_4px_6px_-1px_rgba(99,102,241,0.5),0_2px_4px_-2px_rgba(99,102,241,0.5)]
+      `}>
               <CardHeader>
-                <Shield className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <Shield
+                  className="
+              h-12 w-12 mx-auto mb-4 text-primary
+              transition-transform duration-300
+              group-hover:scale-110 group-hover:-rotate-12 group-hover:text-indigo-500
+            "
+                />
                 <CardTitle>Safe & Secure</CardTitle>
                 <CardDescription>24/7 security and lockers for your belongings</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="text-center border-2 hover:border-primary transition-colors">
+
+            {/* Users Feature - Pink */}
+            <Card className={`
+        group text-center border-2
+        border-[rgba(0,0,0,0.1)]
+        hover:border-pink-500
+        transition-colors transform
+        hover:scale-105
+        transition-transform duration-300 ease-out
+        shadow
+        hover:shadow-[0_4px_6px_-1px_rgba(236,72,153,0.5),0_2px_4px_-2px_rgba(236,72,153,0.5)]
+      `}>
               <CardHeader>
-                <Users className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <Users
+                  className="
+              h-12 w-12 mx-auto mb-4 text-primary
+              transition-transform duration-300
+              group-hover:scale-110 group-hover:rotate-12 group-hover:text-pink-500
+            "
+                />
                 <CardTitle>Travel Community</CardTitle>
                 <CardDescription>Meet fellow travelers from around the world</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="text-center border-2 hover:border-primary transition-colors">
+
+            {/* MapPin Feature - Emerald */}
+            <Card className={`
+        group text-center border-2
+        border-[rgba(0,0,0,0.1)]
+        hover:border-emerald-500
+        transition-colors transform
+        hover:scale-105
+        transition-transform duration-300 ease-out
+        shadow
+        hover:shadow-[0_4px_6px_-1px_rgba(16,185,129,0.5),0_2px_4px_-2px_rgba(16,185,129,0.5)]
+      `}>
               <CardHeader>
-                <MapPin className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <MapPin
+                  className="
+              h-12 w-12 mx-auto mb-4 text-primary
+              transition-transform duration-300
+              group-hover:scale-110 group-hover:-rotate-12 group-hover:text-emerald-500
+            "
+                />
                 <CardTitle>Prime Location</CardTitle>
                 <CardDescription>Walking distance to major attractions and transport</CardDescription>
               </CardHeader>
@@ -110,7 +163,9 @@ const Index = () => {
       </section>
 
       {/* Shared Experiences */}
-      <section className="py-16 bg-white">
+      <section
+        className="py-16 bg-white will-change-transform"
+      >
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Shared Experiences</h2>
@@ -240,7 +295,9 @@ const Index = () => {
 
 
       {/* CTA Banner */}
-      <section className="py-16 bg-primary text-primary-foreground mb-16 mx-4 sm:mx-8 lg:mx-20 rounded-xl">
+      <section
+        className="py-16 bg-primary text-primary-foreground mb-16 mx-4 sm:mx-8 lg:mx-20 rounded-xl will-change-transform"
+      >
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready for Your Adventure?</h2>
           <p className="text-lg mb-8 opacity-90">
@@ -258,7 +315,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-muted py-12">
+      <footer
+        className="bg-muted py-12 will-change-transform"
+      >
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold mb-4">Hotzr</h3>
           <p className="text-muted-foreground mb-4">Premium accommodation for backpackers and travelers</p>
